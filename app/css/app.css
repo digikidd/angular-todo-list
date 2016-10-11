@@ -30,3 +30,7 @@
 #taskList input {
 	margin-right: 10px;
 }
+
+#clearTasks {
+	float: right;
+}

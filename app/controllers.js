@@ -25,4 +25,8 @@ angular.module ( 'todoApp.controller', [] )
             $scope.$watch('taskList', function () {
                 $scope.pendingCount = $filter ('filter')($scope.taskList, {done: false}).length;
             }, true)
+
+            $scope.clearCompleted = function () {
+                $scope.taskList = $filter ('filter')($scope.taskList, {done: false});
+            }
         } ] );

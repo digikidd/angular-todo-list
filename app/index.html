@@ -34,6 +34,7 @@
         </div>
         <span id="todo-count">
 			<h4>{{pendingCount}} <ng-pluralize count="pendingCount" when="{one: 'item left', other: 'items left'}"></ng-pluralize>
+                <button id="clearTasks" ng-show="pendingCount < taskList.length" ng-click="clearCompleted()" class="btn btn-default">Clear completed {{taskList.length - pendingCount}}</button>
 			</h4>
 		</span>
     </div>
