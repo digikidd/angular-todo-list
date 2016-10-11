@@ -4,9 +4,9 @@
 
 angular.module ( 'todoApp.controller', [] )
     .controller ( 'todoAppController', [
-        "$scope", function ( $scope ) {
+        "$scope", "$filter", function ( $scope, $filter ) {
             $scope.newTask = "";
-
+            $scope.pendingCount = 3;
             $scope.taskList = [
                 { description: "Buy airplane tickets", done: false },
                 { description: "Make hotel reservations", done: false },
@@ -21,4 +21,8 @@ angular.module ( 'todoApp.controller', [] )
             $scope.deleteToDo = function (index) {
                 $scope.taskList.splice(index, 1);
             }
+
+            $scope.$watch('taskList', function () {
+                $scope.pendingCount = $filter ('filter')($scope.taskList, {done: false}).length;
+            }, true)
         } ] );
