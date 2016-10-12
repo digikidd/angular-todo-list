@@ -4,6 +4,7 @@
 
 angular.module ( 'todoApp.controller', [] )
     .controller ( 'todoAppController', [
+        //QUESTION FOR JON: CAN "$SCOPE" OR "$FILTER" BE NAMED ANYTHING?
         "$scope", "$filter", function ( $scope, $filter ) {
             $scope.newTask = "";
             $scope.pendingCount = 3;
@@ -20,11 +21,11 @@ angular.module ( 'todoApp.controller', [] )
 
             $scope.deleteToDo = function (index) {
                 $scope.taskList.splice(index, 1);
-            }
+            };
 
             $scope.$watch('taskList', function () {
                 $scope.pendingCount = $filter ('filter')($scope.taskList, {done: false}).length;
-            }, true)
+            }, true);
 
             $scope.clearCompleted = function () {
                 $scope.taskList = $filter ('filter')($scope.taskList, {done: false});

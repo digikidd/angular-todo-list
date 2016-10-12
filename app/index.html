@@ -24,7 +24,7 @@
         <br/>
         <br/>
         <div id="taskList" class="list-group">
-            <div ng-repeat="task in taskList" class="list-group-item">
+            <div ng-repeat="task in taskList" class="list-group-item task">
                 <label class="description" ng-class="{strike: task.done}">
                     <input type="checkbox" ng-model="task.done"/>
                     {{task.description}}
@@ -41,7 +41,8 @@
 
 </div>
 <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="bower_components/angular-animate/angular-animate.js"></script>
 <script type="text/javascript" src="app.js"></script>
-<script type="text/javascript" src="controllers.js"></script>
+<script type="text/javascript" src="controllers/controllers.js"></script>
 </body>
 </html>
