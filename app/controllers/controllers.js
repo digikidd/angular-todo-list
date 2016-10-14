@@ -2,7 +2,7 @@
  * Created by kellycarmichael on 10/9/16.
  */
 
-angular.module ( 'todoApp.controller', [] )
+angular.module ( 'todoApp')
     .controller ( 'todoAppController', [
         //QUESTION FOR JON: CAN "$SCOPE" OR "$FILTER" BE NAMED ANYTHING?
         "$scope", "$filter", function ( $scope, $filter ) {
